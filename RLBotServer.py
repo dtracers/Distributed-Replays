@@ -112,7 +112,7 @@ def unauthorized_handler():
 def upload_file():
     session = Session()
     if request.method == 'POST':
-        save_file(request, queries, session, last_upload, app)
+        return save_file(request, session, last_upload, app)
     replay_data = queries.get_replay_stats(session)
     model_data = queries.get_model_stats(session)
 
